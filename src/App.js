@@ -7,7 +7,15 @@ const App = () => {
   return (
     <>
       <div className='sidebar'>
-        sidebar
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action active">
+            Home
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">About</a>
+          <a href="#" class="list-group-item list-group-item-action">Main</a>
+          {/* <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+          <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a> */}
+        </div>
       </div>
       <div className='main-block'>
         <div className="alert alert-primary" role="alert">
