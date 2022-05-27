@@ -1,0 +1,82 @@
+.lobby-prent {
+  height: 100vh;
+  width: 100vw;
+  background: #91d5ff;
+}
+
+.input-section {
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  width: 55%;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.input-section button {
+  margin-left: 10px;
+}
+
+.styled-text {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  display: block;
+}
+
+/* tablets */
+@media only screen and (max-width: 950px) and (min-width: 600px) {
+  .input-section {
+    grid-template-columns: 1fr;
+    width: 70%;
+    padding: 25px;
+  }
+
+  .styled-text {
+    letter-spacing: -0.025em;
+  }
+
+  .action-section {
+    margin-top: 20px;
+  }
+}
+
+/* mobiles */
+@media only screen and (max-width: 600px) and (min-width: 300px) {
+  .input-section {
+    grid-template-columns: 1fr;
+    padding: 25px;
+    width: 80%;
+  }
+
+  .styled-text {
+    font-size: 1.65rem;
+    line-height: 1.65rem;
+    margin-top: 5px;
+    letter-spacing: -0.025em;
+  }
+
+  .action-section {
+    margin-top: 20px;
+  }
+}
+
+/* foldable screens */
+@media only screen and (max-width: 300px) and (min-width: 20px) {
+  .input-section {
+    grid-template-columns: 1fr;
+    padding: 25px;
+    width: 90%;
+  }
+
+  .styled-text {
+    font-size: 1.15rem;
+    line-height: 1.15rem;
+    margin-top: 5px;
+  }
+
+  .action-section {
+    margin-top: 20px;
+  }
+}
