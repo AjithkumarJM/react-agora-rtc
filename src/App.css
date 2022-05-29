@@ -13,3 +13,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.d-block {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}

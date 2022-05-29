@@ -1,18 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useState } from "react";
 import { Button, Input } from "antd";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import "./styles.css";
 
 const Lobby = () => {
   const navigate = useNavigate();
+  const [roomName, setRoomName] = useState("");
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    let room = e.target.room.value.trim().split(' ').join('_').toLowerCase();
 
-    navigate(`/room=${room}`);
+    navigate(`/room=${roomName}`);
   };
 
   return (
@@ -27,10 +27,20 @@ const Lobby = () => {
           </div>
 
           <form onSubmit={handleOnSubmit} className="align-center">
-            <Input placeholder="foo" size="large" name="room" />
+            <Input
+              placeholder="your room name"
+              size="large"
+              name="room"
+              value={roomName}
+              onChange={(e) =>
+                setRoomName(
+                  e.target.value.trim().split(" ").join("_").toLowerCase()
+                )
+              }
+            />
 
             <Button type="primary" size="large">
-              Join Room
+              <Link to={`/room=${roomName}`}> Join Room </Link>
             </Button>
           </form>
         </div>
