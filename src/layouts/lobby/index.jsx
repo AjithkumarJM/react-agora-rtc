@@ -1,18 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import React from "react";
 import { Button, Input } from "antd";
-import { useNavigate, Link } from "react-router-dom";
 
 import "./styles.css";
 
-const Lobby = () => {
-  const navigate = useNavigate();
-  const [roomName, setRoomName] = useState("");
+const Lobby = (props) => {
+  const { setInCall, setChannelName, channelName } = props;
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
-    navigate(`/room=${roomName}`);
+    if (channelName) {
+      setInCall(true);
+    }
   };
 
   return (
@@ -31,16 +31,16 @@ const Lobby = () => {
               placeholder="your room name"
               size="large"
               name="room"
-              value={roomName}
+              value={channelName}
               onChange={(e) =>
-                setRoomName(
+                setChannelName(
                   e.target.value.trim().split(" ").join("_").toLowerCase()
                 )
               }
             />
 
-            <Button type="primary" size="large">
-              <Link to={`/room=${roomName}`}> Join Room </Link>
+            <Button type="primary" size="large" onClick={handleOnSubmit}>
+              Join Room
             </Button>
           </form>
         </div>

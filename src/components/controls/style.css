@@ -1,0 +1,48 @@
+.controls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1em;
+  z-index: 1;
+}
+
+.control-container {
+  background-color: 1890ff;
+  padding: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.control-container img {
+  height: 30px;
+  width: 30px;
+}
+
+.leave-btn {
+  background-color: rgb(255, 80, 80, 1);
+}
+
+.off {
+  background-color: rgb(255, 80, 80);
+}
+
+.on {
+  background-color: #1890ff;
+}
+
+@media screen and (max-width: 600px) {
+  .smallFrame {
+    height: 80px;
+    width: 120px;
+  }
+
+  .control-container img {
+    height: 20px;
+    width: 20px;
+  }
+}
