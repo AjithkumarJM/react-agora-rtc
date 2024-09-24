@@ -12,6 +12,7 @@ const Lobby = (props) => {
 
     if (channelName) {
       setInCall(true);
+      setChannelName("");
     }
   };
 
